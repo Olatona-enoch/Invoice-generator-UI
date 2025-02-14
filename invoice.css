@@ -1,0 +1,78 @@
+*{
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+.invoice-section{
+    padding: 15px 50px;
+    align-items: center;
+    justify-content: right;
+    background-color: #f0f1f5;
+    font-family: "RoxboroughCF";
+}
+header{
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 40px;
+    font-weight: 500;
+    margin-bottom: 60px;
+    align-items: center;
+}
+.details{
+    font-size: 23px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    line-height: 1.4;
+}
+.details h3{
+    font-size: 23px;
+}
+.details .invoice-date{
+    text-align: right;
+}
+#mainTable{
+    margin-top: 60px;
+    width: 100%;
+    font-size: 20px;
+    border-collapse: collapse;
+    justify-self: center;
+}
+#mainTable td,#mainTable th{
+    border-bottom: 2px solid black;
+    border-top: 2px solid black;
+    text-align: left;
+    padding: 15px;
+}
+.calculations{
+    margin-top: 20px;
+    display: flex;
+    justify-content: right;
+    justify-self: right;
+    width: 40%;
+    font-size: 20px;
+    border-collapse: collapse;
+}
+.calculations td{
+    border-bottom: 2px solid black;
+    /* border-top: 2px solid black; */
+    text-align: left;
+    padding: 15px 50px 15px 50px;
+}
+
+#thanks{
+    margin-top: 100px;
+    margin-bottom: 40px;
+}
+.conclusion{
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+}
+.conclusion p{
+    font-size: 20px;
+}
+.conclusion div:nth-child(2){
+    text-align: right;
+}

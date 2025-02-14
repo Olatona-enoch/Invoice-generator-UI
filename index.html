@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invoice Generator</title>
+    <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=RoxboroughCF">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="invoice.css">
+</head>
+<body>
+    <div class="input-section">
+        <header>
+            <div class="title">INVOICE GENERATOR</div>
+            
+            <div class="newbtn-wrapper">
+                <button class="new">+New</button>
+            </div>
+        </header>
+        
+        <div class="form wrapper">
+            <form action="" id="mainForm" name="mainForm">
+                <div id="formBody">
+                    <div class="input-group">
+                        <label for="customerName">Customer name:</label>
+                        <input type="text" name="customerName" id="">
+                    </div>
+                    <div class="input-group">
+                        <label for="customerNumber">Customer Number:</label>
+                        <input type="telphone" name="customerNumber" id="">
+                    </div>
+                    <div class="input-group">
+                        <label for="address">Customer Adresss:</label>
+                        <input type="text" name="address" id="">
+                    </div>
+                    <div class="item-box">
+                        <div class="input-group">
+                            <label for="itemName">Item:</label>
+                            <input type="text" name="itemName" id="">
+                        </div>
+                        <div class="input-group">
+                            <label for="price">Price: </label>
+                            <input type="number" name="price" id="">
+                        </div>
+                        <div class="input-group">
+                            <label for="quantity">Quantity: </label>
+                            <input type="number" name="quantity" id="">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="buttons">
+                    <button id="add-item" onclick="newItem()"> +Item</button>
+                    <button id="print" onclick="window.print()" >Save</button>
+                </div>
+            </form>
+        </div>
+    
+    </div>
+    <!-- to separate the two main sections -->
+     <div class="separator"></div>
+    <!-- THE invoice Section -->
+
+    <div class="invoice-section">
+        <header>
+            <div>INVOICE</div>
+            <div>Company</div>
+        </header>
+        <div class="details">
+            <div class="client-details">
+                <h3>BILLED TO:</h3>
+                <p id="customerInfo">imani Olowe <br> +123-456-7890 <br> 63 Ivy Road, Hawkville, GA, USA 31036</p>
+            </div>
+            <div class="invoice-date">
+                <p id="idAndDate">Invoice No. 12345 <br> Date: 16 June 2025</p>
+            </div>
+        </div>
+    
+        <table id="mainTable">
+            <tr>
+                <th>Item</th>
+                <th>Quantity</th>
+                <th>Unit Price</th>
+                <th>Total</th>
+            </tr>
+            <!-- <tr>
+                <td>Eggshell Camisole Top</td>
+                <td> 1</td>
+                <td> $123</td>
+                <td> $123</td>
+            </tr>
+            <tr>
+                <td> Cuban</td>
+                <td> 2</td>
+                <td> $127</td>
+                <td> $254</td>
+            </tr>
+            <tr>
+                <td>Floral</td>
+                <td>1</td>
+                <td> $123</td>
+                <td>$123</td>
+            </tr> -->
+        </table>
+        <table class="calculations">
+            <tr>
+                <td>Subtotal</td>
+                <td>$0</td>
+            </tr>
+            <tr>
+                <td>Tax(0%)</td>
+                <td> $0</td>
+            </tr>
+            <tr>
+                <td>Total</td>
+                <td>$0</td>
+            </tr>
+        </table>
+        <h2 id="thanks">Thank You!</h2>
+    
+        <div class="conclusion">
+            <div>
+                <h3>PAYMENT INFORMATION</h3>
+                <p>Briard bank <br> Account Name: Samira Hasid <br> Account No: 123-456-7890 <br> Pay by: 5 july 2025</p>
+            </div>
+            <div>
+                <h2>Samira Hadid</h2>
+                <p>123 Anywhere St., Any City, ST 12345</p>
+            </div>
+        </div>
+    </div>
+<script src="script.js"></script>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+</body>
+</html>
