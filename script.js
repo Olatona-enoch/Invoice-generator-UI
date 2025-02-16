@@ -131,4 +131,12 @@ const printer = document.querySelector("#print");
 printer.onclick = () =>{
     toPDF(invoiceSection)
 }
+let newbtn = document.getElementById("new");
+newbtn.addEventListener("click",function clear() {
+    const allInputs = document.querySelectorAll("input");
+    allInputs.forEach(input => {
+        input.value = "";
+    });
+    
+})
 

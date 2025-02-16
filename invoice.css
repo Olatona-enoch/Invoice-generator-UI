@@ -7,8 +7,9 @@
     padding: 15px 50px;
     align-items: center;
     justify-content: right;
-    background-color: #f0f1f5;
-    font-family: "RoxboroughCF";
+    background-color: #f5f5ef;
+    font-family: 'Times New Roman', Times, serif;
+    border-radius: 10px;
 }
 header{
     margin-top: 50px;
@@ -20,14 +21,15 @@ header{
     align-items: center;
 }
 .details{
-    font-size: 23px;
+    font-size: 18px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     line-height: 1.4;
+    font-family:"inter";
 }
 .details h3{
-    font-size: 23px;
+    font-size: 18px;
 }
 .details .invoice-date{
     text-align: right;
@@ -38,6 +40,8 @@ header{
     font-size: 20px;
     border-collapse: collapse;
     justify-self: center;
+    font-family: 'inter';
+    font-size: 18px;
 }
 #mainTable td,#mainTable th{
     border-bottom: 2px solid black;
@@ -51,7 +55,7 @@ header{
     justify-content: right;
     justify-self: right;
     width: 40%;
-    font-size: 20px;
+    font-size: 18px;
     border-collapse: collapse;
 }
 .calculations td{
@@ -71,7 +75,7 @@ header{
     justify-content: space-between;
 }
 .conclusion p{
-    font-size: 20px;
+    font-size: 18px;
 }
 .conclusion div:nth-child(2){
     text-align: right;
