@@ -7,11 +7,12 @@
     padding: 15px 50px;
     align-items: center;
     justify-content: right;
-    background-color: #f5f5ef;
+    background-color: var(--tertiary-color);
     font-family: 'Times New Roman', Times, serif;
     border-radius: 10px;
+    color: var(--primary-color);
 }
-header{
+.invoice-section header{
     margin-top: 50px;
     display: flex;
     justify-content: space-between;
@@ -44,8 +45,8 @@ header{
     font-size: 18px;
 }
 #mainTable td,#mainTable th{
-    border-bottom: 2px solid black;
-    border-top: 2px solid black;
+    border-bottom: 2px solid var(--primary-color);
+    border-top: 2px solid var(--primary-color);
     text-align: left;
     padding: 15px;
 }
@@ -59,7 +60,7 @@ header{
     border-collapse: collapse;
 }
 .calculations td{
-    border-bottom: 2px solid black;
+    border-bottom: 2px solid var(--primary-color);
     /* border-top: 2px solid black; */
     text-align: left;
     padding: 15px 50px 15px 50px;
@@ -79,4 +80,41 @@ header{
 }
 .conclusion div:nth-child(2){
     text-align: right;
+}
+@media screen and (max-width:561px) {
+    .invoice-section{
+        padding: 15px 20px;
+    }
+    #customerInfo{
+        /* width: 70%; */
+    }
+}
+@media screen and (max-width:409px) {
+    .invoice-section header{
+        font-size: 35px;
+    }
+    #mainTable{
+        width: 100%;
+        font-size: 16px;
+        align-self: center;
+    }
+    .calculations{
+        font-size: 16px;
+        justify-self: center;
+        width: 100%;
+    }
+    .calculations td{
+        padding: 20px;
+    }
+    #thanks{
+        text-align: center;
+    }
+    .conclusion{
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .conclusion div:nth-child(2){
+        text-align: center;
+    }
 }

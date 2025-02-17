@@ -3,6 +3,24 @@
     border: 0;
     box-sizing: border-box;
 }
+/* color for the themes */
+:root{
+    --primary-color:black;
+    --secondary-color:white;
+    --tertiary-color:#f5f5ef;
+    --date: light;
+}
+.light-mode{
+    --primary-color:black;
+    --secondary-color:white;
+    --tertiary-color:#f5f5ef;
+}
+.dark-mode{
+    --primary-color:white;
+    --secondary-color:black;
+    --tertiary-color:#282828;
+    --date: dark;
+}
 
 html{
     overflow-x: hidden;
@@ -12,7 +30,31 @@ body{
     font-family: "poppins";
     display: flex;
     justify-content: space-evenly;
+    background-color:var(--secondary-color) ;
 }
+
+/* switch div */
+#switch-wrapper{
+    width: 70px;
+    background-color: grey;
+    border-radius: 20px;
+    /* border:2px solid; */
+}
+#switch{
+    width: 20px;
+    padding: 15px;
+    height: 100%;
+    background-color: var(--primary-color);
+    border-radius: 50px;
+    /* transform: translateX(100%); */
+    transition: all .3s ease;
+}
+#switch.active{
+    transform: translateX(105%);
+    background-color: var(--primary-color);
+    
+}
+
 .input-section{
     width: 45%;
     display: flex;
@@ -20,31 +62,35 @@ body{
     justify-self: center;
 }
 .separator{
-    border-right: 5px black solid;
+    border-right: 5px var(--primary-color) solid;
     min-height: 100vh;
 }
 .invoice-section{
     height: 100%;
     width: 50%;
 }
-header{
+.input-section header{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-top: 50px;
+    margin-bottom: 60px;
 }
 .title{
     font-size: 40px;
+    color: var(--primary-color);
 }
 label{
     font-size: 25px;
+    color: var(--primary-color);
 }
+
 .form-wrapper{
     display: flex;
     justify-content: center;
     align-items: center;
 }
 form{
-    margin-top: 50px;
     justify-self: center;
     align-self: center;
 }
@@ -53,20 +99,39 @@ form{
     width: 100%;
     height: 5vh;
     outline: none;
-    border: 0;
-    border: 1px solid black;
+    border: 2px solid var(--primary-color);
     font-size: 20px;
+    color: var(--primary-color);
+    color-scheme: var(--date);
+    display: flex;
+    flex-direction: column;
+    padding-left: 5px;
     
 }
 .input-group{
     margin-bottom: 20px;
 }
+.datepicker{
+    display: flex;
+    justify-content: space-between;
+}
+.datepicker .input-group{
+   width: 45%;
+
+}
+.datepicker input{
+   width: 100%;
+}
+
 .item-box{
     display: flex;
     justify-content: space-between;
 }
+.item-box .input-group{
+    width: 30%;
+}
 .item-box .input-group input{
-    width: 90%;
+    width: 100%;
 }
 .buttons{
     margin-top: 50px;
@@ -94,3 +159,62 @@ button:hover{
     background-color: dodgerblue;
 
 } */
+@media screen and (max-width:900px) {
+    body{
+        display: flex;
+        flex-direction: column;
+    }
+    .input-section{
+        width: 90%;
+        align-self: center;
+       
+    }
+    .separator{
+        border-right: 0;
+        border-bottom: 5px var(--primary-color) solid;
+        min-height: 10vh;
+    }
+    .invoice-section{
+        width: 100%;
+    }
+    form{
+        width: 100%;
+    }
+}
+@media screen and (max-width:444px) {
+   .buttons{
+       align-items: center;
+       justify-content: space-around;
+   }
+   .buttons button{
+    margin-right: 0;
+   }
+}
+@media screen and (max-width:400px) {
+   .datepicker{
+    flex-direction: column;
+   }
+   .datepicker .input-group{
+    width: 100%;
+   }
+   .item-box{
+    flex-wrap: wrap;
+   }
+   .item-box .input-group:nth-child(1){
+    width: 100%;
+   }
+   .item-box .input-group{
+    width: 45%;
+   }
+}
+@media screen and (max-width:370px) {
+    .input-section header{
+        display: block;
+    }
+    .buttons{
+        flex-direction: column;
+    }
+    .buttons button{
+        margin-bottom: 20px;
+    }
+}

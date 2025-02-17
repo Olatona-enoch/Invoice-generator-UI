@@ -11,6 +11,9 @@
 </head>
 <body>
     <div class="input-section">
+        <div id="switch-wrapper">
+            <button id="switch" onclick="theme()"></button>
+        </div>
         <header>
             <div class="title">INVOICE GENERATOR</div>
             
@@ -20,7 +23,7 @@
         </header>
         
         <div class="form wrapper">
-            <form action="" id="mainForm" name="mainForm">
+            <form action="" id="mainForm" name="mainForm" onchange="makeInvoice()">
                 <div id="formBody">
                     <div class="input-group">
                         <label for="customerName">Customer name:</label>
@@ -33,6 +36,16 @@
                     <div class="input-group">
                         <label for="address">Customer Adresss:</label>
                         <input type="text" name="address" id="">
+                    </div>
+                    <div class="datepicker">
+                        <div class="input-group">
+                            <label for="date">Date Issued:</label>
+                            <input type="date" name="dateIssued" id="inDate" placeholder="YYYY-MMM-DD">
+                        </div>
+                        <div class="input-group">
+                            <label for="date">Date Due:</label>
+                            <input type="date" name="dateDue" id="#">
+                        </div>
                     </div>
                     <div class="item-box">
                         <div class="input-group">
@@ -52,6 +65,7 @@
                 
                 <div class="buttons">
                     <button id="add-item" onclick="newItem()"> +Item</button>
+                    <button id="save" onclick="download()">save</button>
                     <button id="print" onclick="window.print()" >Print</button>
                 </div>
             </form>
@@ -74,6 +88,7 @@
             </div>
             <div class="invoice-date">
                 <p id="idAndDate">Invoice No. 12345 <br> Date: 16 June 2025</p>
+                
             </div>
         </div>
     
@@ -122,7 +137,7 @@
         <div class="conclusion">
             <div>
                 <h3>PAYMENT INFORMATION</h3>
-                <p>Briard bank <br> Account Name: Olatona Enoch <br> Account No: 123-456-7890 </p>
+                <p id="paymentDetails">Briard bank <br> Account Name: Olatona Enoch <br> Account No: 123-456-7890 </p>
             </div>
             <div>
                 <h2>Olatona Enoch</h2>
@@ -130,6 +145,9 @@
             </div>
         </div>
     </div>
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.8.0/html2pdf.bundle.min.js"></script>
 <script src="script.js"></script>
 <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 </body>
