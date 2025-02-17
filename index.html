@@ -8,6 +8,7 @@
     <link href="https://db.onlinewebfonts.com/c/68b898f6044bbee439423445076f3168?family=Roxborough+CF+Thin" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="invoice.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 </head>
 <body>
     <div class="input-section">
@@ -27,46 +28,47 @@
                 <div id="formBody">
                     <div class="input-group">
                         <label for="customerName">Customer name:</label>
-                        <input type="text" name="customerName" id="">
+                        <input type="text" name="customerName" id="customerName">
                     </div>
                     <div class="input-group">
                         <label for="customerNumber">Customer Number:</label>
-                        <input type="telphone" name="customerNumber" id="">
+                        <input type="telphone" name="customerNumber" id="customerNumber">
                     </div>
                     <div class="input-group">
                         <label for="address">Customer Adresss:</label>
-                        <input type="text" name="address" id="">
+                        <input type="text" name="address" id="address">
                     </div>
                     <div class="datepicker">
                         <div class="input-group">
-                            <label for="date">Date Issued:</label>
-                            <input type="date" name="dateIssued" id="inDate" placeholder="YYYY-MMM-DD">
+                            <label for="dateIssued">Date Issued:</label>
+                            <input type="date" name="dateIssued" id="dateIssued" placeholder="YYYY-MMM-DD" >
                         </div>
                         <div class="input-group">
-                            <label for="date">Date Due:</label>
-                            <input type="date" name="dateDue" id="#">
+                            <label for="dateDue">Date Due:</label>
+                            <input type="date" name="dateDue"  id="dateDue">
+                            <!-- min="2025-02-17" -->
                         </div>
                     </div>
                     <div class="item-box">
                         <div class="input-group">
                             <label for="itemName">Item:</label>
-                            <input type="text" name="itemName" id="">
+                            <input type="text" name="itemName" id="itemName">
                         </div>
                         <div class="input-group">
                             <label for="price">Price: </label>
-                            <input type="number" name="price" id="">
+                            <input type="number" name="price" id="price">
                         </div>
                         <div class="input-group">
                             <label for="quantity">Quantity: </label>
-                            <input type="number" name="quantity" id="">
+                            <input type="number" name="quantity" id="quantity">
                         </div>
                     </div>
                 </div>
                 
                 <div class="buttons">
-                    <button id="add-item" onclick="newItem()"> +Item</button>
-                    <button id="save" onclick="download()">save</button>
-                    <button id="print" onclick="window.print()" >Print</button>
+                    <button id="add-item" class="custom-toast success-toast" onclick="newItem()"> +Item</button>
+                    <button id="save" class="custom-toast danger-toast" onclick="download()">save</button>
+                    <button id="print" class="custom-toast info-toast" onclick="window.print()" >Print</button>
                 </div>
             </form>
         </div>
@@ -84,10 +86,10 @@
         <div class="details">
             <div class="client-details">
                 <h3>BILLED TO:</h3>
-                <p id="customerInfo">imani Olowe <br> +123-456-7890 <br> 63 Ivy Road, Hawkville, GA, USA 31036</p>
+                <p id="customerInfo"></p>
             </div>
             <div class="invoice-date">
-                <p id="idAndDate">Invoice No. 12345 <br> Date: 16 June 2025</p>
+                <p id="idAndDate"></p>
                 
             </div>
         </div>
@@ -145,10 +147,13 @@
             </div>
         </div>
     </div>
-    
+
+<div class="toast-overlay" id="toast-overlay"></div>
+
+<!--------------------- scripts ------------------->
+<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.8.0/html2pdf.bundle.min.js"></script>
 <script src="script.js"></script>
-<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 </body>
 </html>

@@ -1,12 +1,25 @@
-let mainForm = document.forms.mainForm;
-let myDate = new Date();
-let change = myDate.toLocaleDateString();
-console.log(change);
+// let mainForm = document.forms.mainForm;
+// let myDate = new Date();
+// let change = myDate.toLocaleDateString();
+// console.log(change);
 function submitForm(event) {
     //prevent page from refreshing
     event.preventDefault();
 }
 mainForm.addEventListener("submit",submitForm);
+
+//removing invalid characters in the input 
+var invalidChars = ["-", "e", "+", "E"];
+
+$("input[type='number']").on("keydown", function(e){ 
+    if(invalidChars.includes(e.key)){
+         e.preventDefault();
+    }
+});
+// setting minimum date to be today
+var today = new Date().toISOString().split('T')[0];
+document.getElementsByName("dateIssued")[0].setAttribute('min', today);
+document.getElementsByName("dateDue")[0].setAttribute('min', today);
 // declaring lightswitch variable
 const Lightswitch = document.getElementById("switch");
 //to the get the mode the user was on before reloading
@@ -24,6 +37,7 @@ if(modeTrigger == null){
     Lightswitch.classList.add("active");
     
 }
+
 
 
 // declaring the variable to get the add item button and the formbody
@@ -63,7 +77,7 @@ let customerName = mainForm.customerName;
     // InvoiceName.innerHTML = customerName +"<br>"+ customerNumber +"<br>"+ address;
 // }
 // const mainTable = document.getElementById("mainTable");
-let invoiceID = 3373737;
+let invoiceID = "000001";
 // for (let i = 0; i < Infinity; i++) {
 //     invoiceID += i;
     
